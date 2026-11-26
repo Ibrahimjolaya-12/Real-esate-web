@@ -1,0 +1,70 @@
+$primary-orange: #f35525;
+$dark-bg: #1e1e1e;
+$light-orange: #ffeee9;
+
+.calculator-section {
+  .section-subtitle {
+    color: $primary-orange;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: $dark-bg;
+  }
+
+  .calc-input {
+    width: 155px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .badge-amount {
+    background-color: $light-orange;
+    color: $primary-orange;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 8px;
+  }
+
+  .result-summary-card {
+    background: linear-gradient(145deg, #1e1e1e 0%, #2a2a2a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    .btn-calc-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-orange;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.3s ease, transform 0.25s ease;
+
+      &:hover {
+        background-color: #d94316;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-section {
+    .section-title {
+      font-size: 28px;
+    }
+  }
+}

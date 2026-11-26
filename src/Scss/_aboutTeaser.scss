@@ -1,0 +1,156 @@
+$primary-orange: #f35525;
+$hover-light-orange: #ff7a50; // Soft light orange on hover
+$dark-bg: #1e1e1e;
+$light-orange-bg: #ffeee9;
+
+.about-teaser-section {
+  .section-subtitle {
+    color: $primary-orange;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: $dark-bg;
+  }
+
+  .about-image-stack {
+    padding-bottom: 25px;
+    padding-right: 20px;
+
+    .main-about-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .floating-trust-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: 290px;
+      border: 1px solid #f0f0f0;
+
+      .trust-icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background-color: $light-orange-bg;
+        color: $primary-orange;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  /* 4 Feature Cards: Default Shadow + Smooth Light Orange Hover with White Text */
+  .trust-mini-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(243, 85, 37, 0.14);
+    box-shadow: 0 10px 24px -6px rgba(30, 30, 30, 0.12), 0 4px 10px -4px rgba(243, 85, 37, 0.08);
+    transition:
+      transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.32s ease,
+      border-color 0.32s ease,
+      box-shadow 0.32s ease;
+
+    .mini-icon {
+      color: $primary-orange;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .card-title-text {
+      color: $dark-bg;
+      transition: color 0.3s ease;
+    }
+
+    .card-desc-text {
+      color: #6c757d;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      background-color: $hover-light-orange;
+      border-color: $hover-light-orange;
+      box-shadow: 0 18px 34px -8px rgba(243, 85, 37, 0.38), 0 8px 16px -6px rgba(30, 30, 30, 0.16);
+
+      .mini-icon {
+        color: #ffffff;
+        transform: scale(1.06);
+      }
+
+      .card-title-text,
+      .card-desc-text {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .btn-dark-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: $dark-bg;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: #fff;
+    }
+  }
+
+  .btn-outline-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: $dark-bg;
+    border: 1px solid #d9d9d9;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary-orange;
+      color: $primary-orange;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-teaser-section {
+    .section-title {
+      font-size: 28px;
+    }
+
+    .about-image-stack {
+      padding-right: 0;
+
+      .main-about-img {
+        height: 340px;
+      }
+
+      .floating-trust-badge {
+        position: static;
+        max-width: 100%;
+        margin-top: 16px;
+      }
+    }
+  }
+}

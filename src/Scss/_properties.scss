@@ -1,0 +1,140 @@
+$primary-orange: #f35525;
+$dark-bg: #1e1e1e;
+
+.properties-page {
+  .text-orange {
+    color: $primary-orange !important;
+  }
+
+  /* 88vh Parallax Page Banner */
+  .page-banner {
+    position: relative;
+    height: 88vh;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #121212;
+
+    .parallax-bg-layer {
+      position: absolute;
+      inset: -12% 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      will-change: transform;
+      z-index: 0;
+    }
+
+    .parallax-dark-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(15, 15, 15, 0.72) 0%,
+        rgba(15, 15, 15, 0.85) 100%
+      );
+      z-index: 1;
+    }
+
+    .breadcrumb-pill {
+      background-color: #ffffff;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+    }
+  }
+
+  /* Category Filter Pills */
+  .category-pill-btn {
+    background-color: #f4f4f5;
+    color: $dark-bg;
+    border: 1px solid #e5e5e5;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover,
+    &.active {
+      background-color: $primary-orange;
+      border-color: $primary-orange;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(243, 85, 37, 0.25);
+    }
+  }
+
+  /* Unique Right-Side Slide-Over Filter Button */
+  .filter-drawer-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $dark-bg;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 6px 20px 6px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(30, 30, 30, 0.16);
+    transition: all 0.28s ease;
+
+    .filter-icon-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: $primary-orange;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: transform 0.28s ease;
+    }
+
+    &:hover {
+      background-color: $primary-orange;
+      transform: translateY(-2px);
+
+      .filter-icon-circle {
+        background-color: #ffffff;
+        color: $primary-orange;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  /* Custom Orange Pagination Styling */
+  .pagination-pill-wrapper {
+    .ant-pagination-item-active {
+      background-color: $primary-orange !important;
+      border-color: $primary-orange !important;
+
+      a {
+        color: #ffffff !important;
+      }
+    }
+
+    .ant-pagination-item:hover {
+      border-color: $primary-orange !important;
+
+      a {
+        color: $primary-orange !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .properties-page {
+    .page-banner {
+      height: 78vh;
+      min-height: 460px;
+    }
+  }
+}

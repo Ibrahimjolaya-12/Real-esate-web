@@ -1,0 +1,182 @@
+$primary-orange: #f35525;
+$dark-bg: #121212;
+
+.villa-house-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at center, #1c1c1c 0%, $dark-bg 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.55s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.03);
+    pointer-events: none;
+  }
+
+  .preloader-inner {
+    text-align: center;
+    padding: 24px;
+  }
+
+  .house-blueprint-box {
+    width: 150px;
+    height: 125px;
+    margin: 0 auto 14px;
+    filter: drop-shadow(0 12px 28px rgba(243, 85, 37, 0.22));
+  }
+
+  .house-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* 1. Ground Foundation Line */
+  .blueprint-ground {
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: strokeDraw 0.45s ease forwards;
+  }
+
+  /* 2. House Walls */
+  .draw-walls {
+    stroke: #ffffff;
+    stroke-dasharray: 210;
+    stroke-dashoffset: 210;
+    animation: strokeDraw 0.65s ease 0.15s forwards;
+  }
+
+  /* 3. Signature Orange Pitched Roof */
+  .draw-roof {
+    stroke: $primary-orange;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    animation: strokeDraw 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+  }
+
+  /* 4. Chimney */
+  .draw-chimney {
+    stroke: rgba(255, 255, 255, 0.85);
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: strokeDraw 0.4s ease 0.55s forwards;
+  }
+
+  /* 5. Entrance Door */
+  .draw-door {
+    stroke: #ffffff;
+    fill: rgba(243, 85, 37, 0.15);
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: strokeDraw 0.5s ease 0.65s forwards;
+  }
+
+  /* 6. Windows with Warm Interior Light */
+  .draw-window {
+    stroke: $primary-orange;
+    fill: rgba(243, 85, 37, 0);
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    animation:
+      strokeDraw 0.45s ease 0.75s forwards,
+      windowGlow 1.2s ease-in-out 0.95s infinite alternate;
+  }
+
+  .window-right {
+    animation-delay: 0.85s, 1.05s;
+  }
+
+  /* Brand Title */
+  .preloader-brand {
+    font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    animation: fadeUpText 0.6s ease 0.3s both;
+
+    span {
+      color: $primary-orange;
+    }
+  }
+
+  .preloader-caption {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 18px;
+    animation: fadeUpText 0.6s ease 0.45s both;
+  }
+
+  /* Sleek Loading Bar */
+  .preloader-progress-track {
+    width: 170px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .preloader-progress-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, $primary-orange, #ff855f);
+    border-radius: 10px;
+    transform-origin: left;
+    animation: progressLoad 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes strokeDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes windowGlow {
+  from {
+    fill: rgba(243, 85, 37, 0.15);
+  }
+  to {
+    fill: rgba(243, 85, 37, 0.75);
+  }
+}
+
+@keyframes fadeUpText {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressLoad {
+  0% {
+    transform: scaleX(0.08);
+  }
+  65% {
+    transform: scaleX(0.82);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

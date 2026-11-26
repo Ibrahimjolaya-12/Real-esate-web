@@ -1,0 +1,94 @@
+$primary-orange: #f35525;
+$dark-bg: #1e1e1e;
+$light-orange: #ffeee9;
+
+.property-card {
+  border: 1px solid #eeeeee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+
+    .property-img {
+      transform: scale(1.05);
+    }
+  }
+
+  .property-img-wrapper {
+    overflow: hidden;
+    height: 240px;
+
+    .property-img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .city-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      color: $dark-bg;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .property-badge {
+    background-color: $light-orange;
+    color: $primary-orange;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  .property-price {
+    color: $primary-orange;
+  }
+
+  .property-title a {
+    color: $dark-bg;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+
+  .property-specs li {
+    font-size: 13px;
+    color: #555555;
+  }
+
+  .btn-card-details {
+    background-color: $dark-bg;
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: #fff;
+    }
+  }
+
+  .schedule-link {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+}

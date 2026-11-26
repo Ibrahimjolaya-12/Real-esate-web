@@ -1,0 +1,187 @@
+$primary-orange: #f35525;
+$footer-dark: #181818;
+
+.villa-roof-footer {
+  position: relative;
+  overflow: hidden;
+
+  /* Pitched Gable Roof Top */
+  .roof-svg-wrapper {
+    position: relative;
+    width: 100%;
+    height: 115px;
+    line-height: 0;
+    margin-bottom: -1px;
+
+    .roof-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Chhat ki peak par Home link badge */
+    .roof-peak-badge {
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: $primary-orange;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(243, 85, 37, 0.45);
+      border: 3px solid $footer-dark;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+
+      &:hover {
+        background-color: #d94316;
+        color: #ffffff;
+        transform: translateX(-50%) translateY(-3px) scale(1.06);
+      }
+    }
+  }
+
+  .footer-body {
+    background-color: $footer-dark;
+    min-height: 330px; // ~30px extra height added cleanly
+  }
+
+  .footer-bottom-bar {
+    padding-top: 28px;
+    padding-bottom: 10px;
+  }
+
+  .footer-logo {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .footer-heading {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 28px;
+      height: 2px;
+      background-color: $primary-orange;
+    }
+  }
+
+  .footer-links {
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.25s ease, padding-left 0.25s ease;
+
+        &:hover {
+          color: $primary-orange;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .social-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      transform: translateY(-3px);
+    }
+  }
+
+  /* Newsletter Input */
+  .newsletter-box {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 30px;
+    padding: 4px;
+
+    input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 13px;
+      padding: 6px 14px;
+      width: 100%;
+      outline: none;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+    }
+
+    button {
+      background-color: $primary-orange;
+      color: #ffffff;
+      border: none;
+      width: 36px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.25s ease;
+
+      &:hover {
+        background-color: #d94316;
+      }
+    }
+  }
+}
+
+/* Mobile Screen par roof ko sleek aur proportionate rakhne ke liye */
+@media (max-width: 768px) {
+  .villa-roof-footer {
+    .roof-svg-wrapper {
+      height: 65px;
+
+      .roof-peak-badge {
+        top: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+    }
+
+    .footer-body {
+      min-height: 360px;
+    }
+  }
+}

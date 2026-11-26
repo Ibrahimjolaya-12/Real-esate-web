@@ -1,0 +1,67 @@
+@import "./Scss/bootstrap";
+@import "./Scss/navbar";
+@import "./Scss/heroSlider";
+@import "./Scss/aboutTeaser";
+@import "./Scss/propertyCard";
+@import "./Scss/installmentCalculator";
+@import "./Scss/testimonials";
+@import "./Scss/ctaBanner";
+@import "./Scss/footer";
+
+@import "./Scss/aboutus";
+
+@import "./Scss/propertiesDetails";
+@import "./Scss/properties";
+
+@import "./Scss/contact";
+
+@import "./Scss/housePreloader";
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
+
+html,body{
+  overflow-x: hidden !important;
+}
+
+
+
+:root {
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1e1e1e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-main-title,
+.section-title,
+.footer-logo {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Numbers aur Prices ko aligned aur crisp rakhne ke liye */
+.fs-4, .display-4, .display-5, .display-6 {
+  font-variant-numeric: tabular-nums;
+}
